@@ -1,8 +1,16 @@
 import React from "react";
-import "./App.css";
+import AuthApp from "./components/AuthApp";
+import UnAuthApp from "./components/UnAuthApp";
+import { useAuthUser } from "./context/auth-context";
 
 function App() {
-  return <div className="App"></div>;
+  const authUser = useAuthUser();
+
+  if (authUser) {
+    return <AuthApp />;
+  } else {
+    return <UnAuthApp />;
+  }
 }
 
 export default App;
