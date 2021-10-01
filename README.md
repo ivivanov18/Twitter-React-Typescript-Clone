@@ -47,8 +47,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 onSubmit={(e: React.SyntheticEvent) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
-      email: { value: string };
-      password: { value: string };
+      email: { value: string }; //input name
+      password: { value: string }; //input name
     };
     const email = target.email.value;
     const password = target.password.value;
