@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Form, Button, FormGroup, Image, Alert } from "react-bootstrap";
 import { register } from "src/services/api";
 
@@ -23,7 +24,7 @@ export default function Register() {
 
       const username = target.username.value;
       const fullname = target.fullname.value;
-      const password = target.fullname.value;
+      const password = target.password.value;
 
       await register({ username, fullname, password });
       window.location.pathname = "/";
@@ -93,7 +94,9 @@ export default function Register() {
           <div style={{ margin: "1rem auto" }}>
             <p>or</p>
           </div>
-          <Button variant="light">Log in</Button>
+          <Link to="/login">
+            <Button variant="light">Log in</Button>
+          </Link>
         </div>
       </Form>
     </fieldset>

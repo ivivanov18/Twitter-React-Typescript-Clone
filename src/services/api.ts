@@ -1,8 +1,8 @@
 import axios, { AxiosInstance } from "axios";
-import { RegisterData } from "./types";
+import { LoginData, RegisterData } from "./types";
 
 const client: AxiosInstance = axios.create({
-  baseURL: "https://twitter-react-clone-backend.herokuapp.com",
+  // baseURL: "https://twitter-react-clone-backend.herokuapp.com",
 });
 
 export async function authenticate() {
@@ -11,4 +11,8 @@ export async function authenticate() {
 
 export async function register(payload: RegisterData) {
   await client.post("auth/signup", payload);
+}
+
+export async function login(payload: LoginData) {
+  await client.post("auth/login", payload);
 }
